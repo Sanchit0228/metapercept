@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+     
+        <title> Title</title>
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class='navbar'>
+
+
+        </nav>
+       <header class="header">
+        <div class="container">
+            <h1> Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus mi, egestas et imperdiet quis, tristique non mi.</p>
+           <button> Read more</button> 
+        </div>
+       </header>
+
+       <section>
+        <div class="container">
+            <h3> Classes</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus mi, egestas et imperdiet quis, tristique non mi.</p>
+            <div class="class" id="class-list">
+        </div>
+       </section>
+       <footer class="footer">
+        <div class="container">
+            <p>  Copyright 2021. All Rights Reserved.</p>
+            <a href="#">Back to top</a>
+        </div>
+    </footer>
+
+        
+
+
+       <script>
+        fetch('class.json')
+        .then(response => response.json())
+        .then(data => {
+            const classList = document.getElementById('class-list');
+            data.forEach(course => {
+                const classDiv = document.createElement('div');
+                classDiv.classList.add('course');
+                classDiv.innerHTML = `
+                    <div class="image-placeholder">
+                        <img src="${course.ImageUrl}" alt="${course.ID}"/>
+                    </div>
+                    <h3>${course.Name}</h3>
+                    <p>${course.ShortDesc}</p>
+                    <button> View </button>
+                `;
+                classList.appendChild(classDiv);
+            });
+        })
+        .catch(error => console.error('Error loading class data:', error));
+    </script>
+    
+    </body>
+</html>
