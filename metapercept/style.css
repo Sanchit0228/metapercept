@@ -1,11 +1,48 @@
 body{
     background-color: whitesmoke;
-    text-align: center;
+   
 }
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+     text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #faf3f3;
+}
+
+.nav-left {
+    flex: 1;
+}
+
+.nav-right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    color: rgb(17, 16, 16);
+    text-decoration: none;
+    padding: 10px 15px;
+    
+}   
+.nav-button {
+    border: 2px solid #04AA6D; 
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 10px;
+    
 }
 .header {
     background: linear-gradient(to right, #0073e6, #00c6ff);
